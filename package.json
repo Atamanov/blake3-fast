@@ -1,0 +1,59 @@
+{
+  "name": "blake3-fast",
+  "version": "1.0.0",
+  "description": "Pure JavaScript BLAKE3 implementation with SIMD optimization",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./browser": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "browser": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:browser": "vitest run --environment jsdom",
+    "bench": "npx tsx benchmarks/bench.ts",
+    "bench:browser": "npx tsx benchmarks/browser-bench.ts"
+  },
+  "devDependencies": {
+    "blake3": "^2.1.4",
+    "esbuild": "^0.20.0",
+    "jsdom": "^24.0.0",
+    "tinybench": "^2.6.0",
+    "typescript": "^5.3.0",
+    "vitest": "^2.0.0"
+  },
+  "keywords": [
+    "blake3",
+    "hash",
+    "crypto",
+    "simd",
+    "wasm",
+    "cryptography",
+    "hashing"
+  ],
+  "author": "Alexander Atamanov",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexanderatamanov/blake3-fast"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
