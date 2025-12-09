@@ -112,6 +112,15 @@ npm test         # Run test suite
 npm run bench    # Performance benchmarks
 ```
 
+### Browser Benchmark
+
+```bash
+npm run bench:browser   # Generate benchmarks/browser-bench.html
+open benchmarks/browser-bench.html
+```
+
+Opens a cyberpunk-themed benchmark page. Click "run" to compare implementations in your browser.
+
 ## License
 
 MIT © [Alexander Atamanov](https://github.com/Atamanov) 2025
